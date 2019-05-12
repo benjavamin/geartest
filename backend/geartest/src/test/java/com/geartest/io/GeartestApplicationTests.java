@@ -1,4 +1,4 @@
-package com.geartest.www.geartest;
+package com.geartest.io;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
