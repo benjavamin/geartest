@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Data
@@ -17,8 +18,10 @@ public class Item implements Serializable {
     @GeneratedValue
     private Long Id;
 
+    @NotBlank
     private String itemName;
 
+    @NotBlank
     private int itemLevel;
 
     private int primaryId;
