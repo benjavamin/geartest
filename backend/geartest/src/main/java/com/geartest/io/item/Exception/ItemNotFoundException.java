@@ -6,6 +6,6 @@ public class ItemNotFoundException extends Exception{
 
 
     public ItemNotFoundException(long ItemId){
-        super(String.format("Book is not found with id : '%s'", ItemId));
+        super(String.format("Item is not found with id : '%s'", ItemId));
     }
 }
