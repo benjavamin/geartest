@@ -1,0 +1,41 @@
+.item-model {
+  width: 442px;
+  height: 513px;
+  position: relative;
+  background: black;
+}
+
+.item-model .item-left {
+  position: absolute;
+  left: 0px;
+  top: -1px;
+}
+
+.item-model .item-right {
+  position: absolute;
+  left: 390px;
+  top: -1px;
+}
+
+.item-model .item-bottom {
+  position: absolute;
+  left: 140px;
+  top: 452px;
+  z-index: 3;
+  ;
+}
+
+.item-model .item-slot {
+  height: 54px;
+  width: 60px;
+  margin: 1px 0 0px 0;
+  position: relative;
+}
+
+.item-bottom .item-slot {
+  margin-right: 5px;
+  float: left;
+  display: block;
+  width: 55px;
+  height: 50px;
+}
