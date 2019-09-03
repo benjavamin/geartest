@@ -1,6 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Item} from '../data/models/item';
 import {ItemType} from '../data/models/item-type';
+import {MatDialog} from '@angular/material';
+import {ChooseItemModalComponent} from './choose-item-modal/choose-item-modal.component';
 
 @Component({
   selector: 'app-ww-component',
@@ -20,48 +22,24 @@ export class WwComponentComponent implements OnInit {
     'Power: 332\n' +
     'Speed: 0\n' +
     'Hit rating: 2.56%\n' +
-    'Critical: 13.38% \n' +
-    '\n' +
-    'Attributes\n' +
-    'Strength: 121\n' +
-    'Agility: 71\n' +
-    'Intellect: 1328\n' +
-    'Stamina: 1882\n' +
-    'Spirit: 145\n' +
-    'Expertise: 0\n' +
-    'Ranged\n' +
-    'Damage: 10 - 11\n' +
-    'Power: 61\n' +
-    'Speed: 0\n' +
-    'Hit rating: 2.56%\n' +
-    'Critical: 0% \n' +
-    '\n' +
-    'Defense\n' +
-    'Armor: 15947\n' +
-    'Dodge: 3.29%\n' +
-    'Parry: 0%\n' +
-    'Block: 5%\n' +
-    'Resilience: 1400\n' +
-    'Spell\n' +
-    'Power: 2922\n' +
-    'Healing: 2922\n' +
-    'Haste: 26.38%\n' +
-    'Hit rating: 3.2%\n' +
-    'Critical: 0% \n' +
-    '\n' +
-    'Resistances\n' +
-    'Arcane: 0\n' +
-    'Fire: 0\n' +
-    'Nature: 0\n' +
-    'Frost: 0\n' +
-    'Shadow: 0';
+    'Critical: 13.38% \n';
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
   public onItemClick() {
+    const dialogRef = this.dialog.open(ChooseItemModalComponent, {
+      height: '400px',
+      width: '600px',
+      data: this.someItemDescription
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.someItemDescription = result;
+    });
     // this.itemClicked.emit(this.selectedItem);
   }
 

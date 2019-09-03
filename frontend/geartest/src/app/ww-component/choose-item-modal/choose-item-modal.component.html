@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Modal Title</h1>
+<div mat-dialog-content>
+  <p>Type in some modal text?</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data" >Ok</button>
+</div>
